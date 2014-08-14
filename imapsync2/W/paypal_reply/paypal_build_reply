@@ -1,0 +1,212 @@
+#!/usr/bin/perl 
+
+# $Id: paypal_build_reply,v 1.26 2014/05/22 10:35:33 gilles Exp gilles $
+
+use warnings;
+use strict;
+use Getopt::Long;
+
+my ($msg_id_file, $msg_id);
+my ($amount, $name, $email);
+my (
+	$paypal_line, $paypal_info,
+	$buyer, $description, $object, 
+	$url, $release, $release_exe, 
+);
+
+my $help ;
+my $debug ;
+
+my $numopt = scalar(@ARGV);
+my $opt_ret = GetOptions(
+        "help"          => \$help,
+        "debug!"        => \$debug,
+);
+
+usage() and exit if ($help or ! $numopt) ;
+
+$msg_id_file = $ARGV[1];
+$msg_id = firstline($msg_id_file);
+
+$release      = firstline( '/g/public_html/imapsync/VERSION' ) ;
+$release_exe  = firstline( '/g/public_html/imapsync/VERSION_EXE' ) ;
+my $path_last = firstline( '/g/public_html/imapsync/dist/path_last.txt' ) ;
+
+$url = "http://ks.lamiral.info/imapsync/dist/$path_last/" ;
+
+
+$debug and print "Hi!\n" ;
+
+my @input = <> ;
+
+while( my $line = shift @input ) {
+	next if ( $line !~ /^(.*Num.+ro de transaction.*)$/ );
+	$paypal_line = $1;
+	$paypal_info  = "===== Paypal id =====\n$paypal_line\n";
+	$debug and print "$paypal_info" ;
+	last;
+}
+while( my $line = shift @input ) {
+	if ( $line =~ /^Vous avez re.*paiement d'un montant de (.*) de la part de (.*) \((.*)\)/) {
+		($amount, $name, $email) = ($1, $2, $3);
+                $debug and print "1 ($amount, $name, $email)\n" ;
+		last;
+	}
+	if ( $line =~ /^Vous avez re.*paiement d'un montant de (.*) de la part de (.*)/) {
+		($amount, $name, $email) = ($1, "", $2);
+                $debug and print "2 ($amount, $name, $email)\n" ;
+		last;
+	}
+}
+
+
+$debug and print "[$amount] [$name] [$email] [$paypal_line]\n";
+
+$amount =~ /^.*?(\d+.*)/ ;
+my $amount_ascii = $1 || '' ;
+
+while( my $line = shift @input ) {
+	if ( $line =~ /^Acheteur/ ) {
+		$buyer .= "===== Acheteur =====\n";
+                $debug and print "1 $buyer\n" ;
+		last;
+	}
+	if ( $line =~ /^Informations sur l'acheteur/ ) {
+		$buyer .= "===== Acheteur =====\n";
+		chomp( $name = shift @input );
+		$buyer .= "$name\n" ;
+                $debug and print "2 $buyer\n" ;
+		last;
+	}
+}
+
+while( my $line = shift @input ) {
+      $buyer .= $line if ( $line !~ /^-----------------------------------/ );
+      last if ( $line =~ /^-----------------------------------/ );
+}
+$debug and print "3 $buyer\n" ;
+
+while( my $line = shift @input ) {
+	$debug and print "Search Description [$line]\n" ;
+	next if ( $line !~ /Description..?:(.*)/ ) ;
+        $object = $1 ;
+	$description  = "===== Details =====\n" ;
+	$description .= $line ;
+	last ;
+}
+$debug and print "[$object] [$description]\n" ;
+
+
+while( my $line = shift @input ) {
+	$debug and print "LINE:$line" ;
+	$description .= $line;
+	last if ( $line =~ /^Paiement envoy/ );
+	last if ( $line =~ /^N.*d'avis de r.*ception/ );
+}
+
+
+my $address = 'gilles.lamiral@laposte.net';
+my $address2 = 'gilles@lamiral.info';
+my $rcstag  = '$Id: paypal_build_reply,v 1.26 2014/05/22 10:35:33 gilles Exp gilles $';
+
+my $download_info = "You will find the latest imapsync.exe binary (release $release_exe)
+and the latest imapsync source code (release $release) at the following link:
+$url" ;
+
+my $next_releases =
+"Next imapsync releases will be available to you for lifetime without extra payment.
+
+You are subscribed to a newsletter [imapsync_update] announcing new releases.
+Just keep this message and ask for the new links in case you miss the newsletter.
+Ask me to be unsubscribed, you can also do it yourself at
+http://lists.lamiral.info/cgi-bin/mailman/listinfo/imapsync_update
+
+Run imapsync without any argument to know if a new release is available.
+A permanent link to last release is http://imapsync.lamiral.info/paypal_return.shtml
+also written on the invoice you'll receive soon, I edit invoices once a week or on demand." ;
+
+my $support_info = 'For imapsync professional support,
+contact me (Gilles LAMIRAL) by email or phone at:
+
+Email address:              gilles.lamiral@laposte.net.
+Professionnal phone number: +33 951 84 42 42 (France) 
+Mobile phone number:        +33 620 79 76 06 (France).
+
+I can call you back toll-free in many countries on landline telephone numbers
+and to mobile numbers in the United States and France. So do not hesitate
+to send me a note if you need vocal support.' ;
+
+
+my $thanks_software = "I thank you for buying and using imapsync,
+I wish you successful transfers!" ;
+
+
+my $text_software = "$download_info\n
+$next_releases\n
+$support_info\n
+You will receive an invoice soon.\n
+$thanks_software" ;
+
+my $subject_software = "[imapsync download] imapsync release $release [$amount_ascii from $email]" ;
+
+my $subject ;
+
+my $text ;
+$text = $text_software ;
+$subject = $subject_software ;
+
+
+
+my $message = <<EOM
+X-Comment: $rcstag
+In-Reply-To: $msg_id
+From: Gilles LAMIRAL <$address>
+To: <$email>
+Bcc: Gilles LAMIRAL <$address>, <$address2>
+Subject: $subject
+
+Hello $name,
+
+$text
+
+$paypal_info
+$buyer
+$description
+==== Vendeur ====
+Gilles LAMIRAL
+La Billais
+35580 Baulon
+FRANCE
+
+Tel: +33 951 84 42 42
+Mob: +33 620 79 76 06
+Fax: +33 956 84 42 42
+
+email: $address
+
+-- 
+Au revoir,                             09 51 84 42 42
+Gilles Lamiral. France, Baulon (35580) 06 20 79 76 06
+EOM
+;
+
+=pod
+=cut
+
+
+print $message;
+$debug and print "[$amount] [$name] [$email] [$paypal_line] [$object]\n";
+
+
+sub firstline {
+        # extract the first line of a file (without \n)
+
+        my($file) = @_;
+        my $line  = "";
+        
+        open FILE, $file or die("error [$file]: $! ");
+        chomp($line = <FILE>);
+        close FILE;
+        $line = ($line) ? $line: "error !EMPTY! [$file]";
+        return $line;
+}

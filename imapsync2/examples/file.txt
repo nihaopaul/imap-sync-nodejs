@@ -1,0 +1,14 @@
+# Example file.txt for imapsync massive migration.
+#
+# Each line contains 4 columns, columns are parameters for --user1 --password1 --user2 --password2
+# Windows: see the script examples/sync_loop_windows.bat 
+# Unix:    see the script examples/sync_loop_unix.sh 
+#
+#
+# Now the data example 
+user001_1;password001_1;user001_2;password001_2
+user002_1;password002_1;user002_2;password002_2
+user003_1;password003_1;user003_2;password003_2
+# Another comment blabla
+user004_1;password004_1;user004_2;password004_2
+user005_1;password005_1;user005_2;password005_2

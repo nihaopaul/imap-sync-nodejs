@@ -1,0 +1,1242 @@
+#!/bin/cat
+# $Id: CREDITS,v 1.180 2013/11/15 01:51:58 gilles Exp gilles $
+
+If you want to make a donation to the author, Gilles LAMIRAL,
+use any of the following ways:
+
+a) you can use the imapsync wishlist :
+  http://www.amazon.com/gp/registry/wishlist/1C9UNDIH3P7R7/
+  (Use the lowest postal cost)
+
+b) If you can read french, please use the following wishlist :
+  http://amazon.fr/gp/registry/wishlist/37RZF7PPCD7YL
+  (books will be send with free postal cost)
+
+c) its paypal account : gilles.lamiral@laposte.net
+http://www.linux-france.org/prj/imapsync/paypal.shtml
+
+d) If you prefer making your donation with
+cash or cheque then my postal address is:
+
+Gilles LAMIRAL
+La Billais
+35580 Baulon
+FRANCE
+
+Here are the persons who helped me to develop and maintain imapsync.
+Feel free to tell me if a name is missing or if you want to remove one.
+
+I thank very much all of these people.
+I thank also very much all people who bought imapsync from the homepage
+but I don't cite them here.
+
+David Karnowski.
+Suggested --disarm_read_receipts for its regex.
+
+Erik Torsner.
+Gave patch for create_folder() and nested folders.
+http://erik.torgesta.com/2013/05/gmail-and-google-apps-mail-migration/
+
+Ralf Hauber 
+Gave installation tips for Centos and a bug report about
+final statistics for newly created folders. 
+
+Dave Murray
+Simon Savva
+Found, reported and solved the "Flagged" flag Exchange bug.
+
+Krul, Patrick
+Found bug about trailing blanc on Win32 cache dir.
+
+Jonathan Daley
+Contributed by giving the book
+13.33 EUR "Cartoon Guide to Statistics"
+
+Bowman Gillianne
+Contributed by giving the book
+8.60 EUR "L'Épreuve de l'étranger: Culture et traduction dans l'Allemagne romantique"
+
+Paul Heller
+Contributed by giving the book
+28.54 "Practical Packet Analysis: Using Wireshark to Solve Real-World Network Problems"
+
+Jim Klimov
+Gave patch to handle proxyauth failures.
+
+Eduardo Bortoluzzi Junior
+Write the XOAUTH code and FAQ item.
+
+Marc Weber
+Suggested --mark-as-deleted1 --mark-as-deleted2
+
+Jeff Verheyen
+Contributed by giving a 32GB micro SDHC card and the book
+29.69 "Design by Nature: Using Universal Forms and Principles in Design"
+
+David Abrahams
+Gave a patch for --authmech PREAUTH
+
+Peter Fuchs
+Contributed by giving the book
+30.86 "Designed for Use: Create Usable Interfaces for Applications and the Web"
+
+Pierre GUILLAUME // e-Lixir
+Fixed 2 bugs about [Gmail] folder names.
+one is about $cache_dir and bsd_globs() that needs escaped characters.
+Second is eval and --delete2foldersonly --delete2foldersbutnot that need
+also good escaping. Thanks.
+
+Unknown (Found no card in the packet; may be lost since book is damaged, amazon and paper box for an international transported book ...)
+Contributed by giving the book
+87.18 "Paradigms of Artificial Intelligence Programming: Case Studies in Common Lisp"
+
+Christophe Kern
+Bugfix in the invoice ("paiement à réception de facture")
+GSSAPI proposition
+--useuid --nousecache creates duplicates and should be documented.
+--usecache creates many inodes
+
+Thomas Edgar
+Gave a FAQ item "from Exchange 2003 to Cyrus Imap 2.4"
+
+Dan Hulme.
+Found a bug in the FAQ about --regextrans2
+(Fix is --regextrans2 's,${h2_prefix}(.*),${h2_prefix}FOO${h2_sep}$1,')
+Suggested default --useheader 'Message-ID' --useheader 'Received'
+(Exchange compliant)
+
+Ameir Abdeldayem
+Gave a patch to sync messages lacking Message-ID
+http://www.linux-france.org/prj/imapsync_list/msg01151.html
+
+Yousaf Shah
+Contributed by giving the book
+19.90 "Making Things Talk: Using Sensors, Networks, and Arduino to see, hear, and feel your world"
+
+Klaus Franken
+Patch to avoid useless warning "Use of uninitialized value $uid1 in exists"
+
+Charles H Deling
+Contributed by giving the book
+13.59 "The Twitter Book"
+
+Paulo Victor Fernandes da Silva
+Contributed by giving money 1 USD   
+
+Daniel Rohde
+Bugfix. Solaris 10. ps -o vsz -p @PID
+
+Dex Kelson.
+Contributed by his patch for a better good_date() with --idatefromheader over 100000 messages.
+
+Unknow (@baccari.it)
+Contributed by giving the book
+32.65 "Metamagical Themas: Questing For The Essence Of Mind And Pattern"
+
+Unknow
+Contributed by giving the book
+20.31 "Fluid Concepts And Creative Analogies: Computer Models Of The Fundamental Mechanisms Of Thought"
+
+Khalid Shakir
+Contributed by giving the book
+75.00 "Selected Papers on Fun and Games [Hardcover]"
+
+Alexander J. Stein
+Contributed by giving the book
+22.00 "Weinberg on Writing: The Fieldstone Method"
+
+Doug Ferguson
+Contributed by giving the books
+35.16 "Test Driven Development: By Example"
+13.86 "Gödel, Escher, Bach: An Eternal Golden Braid"
+14.49 "The Mind's I: Fantasies and Reflections on Self & Soul"
+46.42 "Memory"
+
+Timothy Jay Chambers
+Contributed by giving the book
+27.32 "Mathematics and Plausible Reasoning: Volume II Patterns of Plausible Inference"
+
+D.R. Crane
+Contributed by giving the book
+40.90 "Working Effectively with Legacy Code"
+
+Daniel Melnechuk
+Contributed by giving the book
+10.02 "The Design of Everyday Things"
+
+Pratch Pakpinpetch
+Contributed by giving the book
+17.95 "Life and How to Survive It"
+
+Edward Helvund
+Contributed by giving the book
+9.84 "Satan, Cantor and Infinity: Mind-Boggling Puzzles"
+
+Andrea Provaglio
+Contributed by giving the book
+24.95 "Salsa, Further Adventures In Afro Cuban Music For Piano"
+
+Eric Busalacchi
+Contributed by giving money 84 USD   
+
+Jorge López Pérez
+Gave patch proxyauth-v2_1.366.patch
+
+Jeffrey Allison
+Contributed by giving money 30 USD
+
+Roger Schmid
+Contributed by giving money 100 USD
+
+Danny Schulz
+Contributed by giving money 15 USD
+
+Christian Kowarzik
+Contributed by giving money 90 USD
+for --deletefolder2 option.
+
+Harald Petrovitsch
+Contributed by giving the book
+29.95 "Families and How to Survive Them"
+
+Tobias Fink
+Contributed by giving money 5 Eur
+
+Yanick Cyr
+Contributed by giving money 25 USD
+
+Trony Tigno
+Contributed by giving money 5 USD
+
+Paul Garner
+Contributed by giving money 5 USD
+
+Kevin Kretz
+Contributed by giving the books
+15.25 "Tres Cubano: A Complete Guide To Playing The Cuban Tres Guitar (Book & CD)"
+24.00 "Creative Clowning"
+
+Kirk Ismay
+Contributed by giving money 50 USD
+
+Fast-Serv Technologies
+Contributed by giving money 10 USD
+
+Christian Leue
+Contributed by giving money 25 USD
+
+Tony Pearse
+Contributed by giving money 25 USD
+
+Jan Keymeulen
+Contributed by giving money 10 USD for 50% speedup.
+
+Globule Bleu
+Contributed by giving money 15 USD
+
+Martin Schlagnitweit
+Contributed by giving money 20 USD
+
+Martin Werthmoeller
+Gave a patch ./patches/imapsync-1.337_tobit_V6.patch
+
+Jeremy Stent
+Contributed by giving the book
+13.60 "Unfolding the Napkin: The Hands-On Method for Solving Complex Problems with Simple Pictures"
+
+BudgetDedicated
+Contributed by giving money 5 USD
+
+Wilton de Oliveira Garcia
+Contributed by giving money 10 USD
+
+David Osbo
+Contributed by giving the book
+15.61 "The Complete Idiot's Guide to Conversational Sign Language Illustrated"
+
+Jeroen Ticheler
+Contributed by giving the book
+23.77 "Maps of Narrative Practice" 
+
+Korey Kwilinski
+Contributed by giving money 20 USD
+
+Bertrand STERN
+Contributed by giving money 100 USD
+
+George Hazlewood
+Contributed by giving money 40 USD
+
+Miguel Jacq
+Contributed by giving money 100 AUD
+
+Jörg Friedrichs
+Found a FAQ bug about "From ".
+
+Telematic Freedom Foundation
+Contributed by giving the book
+11.20 "The Tao Is Silent"
+
+Jurgen Hoffmann
+Contributed by giving the book
+24.95 "Salsa and Afro Cuban Montunos for Guitar"
+
+Thomas In der Rieden
+Contributed by giving the book
+13.57 "Nature's Building Blocks: An A-Z Guide to the Elements"
+
+Sarah Van Vliet
+Contributed by giving money 25 USD
+
+Gregory Hedo 
+Contributed by giving money 100 Euros
+
+Jesse Feddema
+Contributed by giving money 5 USD
+
+Justin Morgan
+Contributed by giving money 25 USD
+
+Eelco Maljaars
+Contributed by giving money 10 USD
+
+Pertti Karppinen
+Found and fixed a bug in compare_lists().
+No flag on host1 was not removing flags on host2.
+
+Owen Allsopp
+Contributed by giving the book
+16.66 "The Success of Open Source"
+
+Kai Rankio
+Contributed by giving the book
+16.47 "Producing Open Source Software: How to Run a Successful Free Software Project"
+
+Joshua Schmidlkofer
+Contributed by giving the book
+36.97 "Hacker's Delight"
+
+Mark Charette
+Contributed by giving the book
+23.09 "MAKE: Electronics: Learning Through Discovery"
+
+Mordur Ingolfsson
+Contributed by giving the book
+47.16 "Mobile Python: Rapid prototyping of applications on the mobile platform"
+
+Daryl Herzmann
+Contributed by giving the book
+19.77 "The Elements: A Visual Exploration of Every Known Atom in the Universe"
+
+Brian Fonseca
+Contributed by giving the book
+35.95 "Lions' Commentary on Unix"
+
+Gary MacIsaac
+Contributed by giving the books
+32.00 "The Mathematical Theory of Communication"
+34.61 "Beautiful Teams: Inspiring and Cautionary Tales from Veteran Team Leaders"
+91.26 "Mathematics: A Human Endeavor (3rd Edition)"
+
+Benjamin Clayton
+Contributed by giving the book
+38.20 "Beautiful Data: The Stories Behind Elegant Data Solutions"
+
+Sandra Hallenbeck
+Contributed by giving the book
+40.09 "Feynman Lectures on Computation"
+
+Robert Bauer
+Contributed by giving the book
+31.50 "Programming Interactivity: A Designer's Guide to Processing, Arduino, and Openframeworks" by Joshua Noble
+
+R.W. Rodolico
+Contributed by giving the book
+25.60 "Le Ton Beau De Marot: In Praise Of The Music Of Language" by Clément Marot, Douglas R. Hofstadter
+
+Martin & Simon Clauss
+Contributed by giving the book
+23.09 "The Best of Instructables Volume I: Do-It-Yourself Projects from the World's Biggest Show & Tell (v. 1)" by MAKE magazine and Instructables.com
+
+Phil Haigh
+Contributed by giving the book
+29.70 "The Failure of Risk Management: Why It's Broken and How to Fix It" by Douglas W. Hubbard
+
+Frank Justin Woodman
+Contributed by giving the book
+31.49 "JavaScript: The Definitive Guide" by David Flanagan
+
+Matt Garretson
+Contributed by giving the books
+42.66 "Beautiful Testing: Leading Professionals Reveal How They Improve Software (Theory in Practice)"  by Adam Goucher
+13.46 "Salsa Piano - The Complete Guide with CD!: Hal Leonard Keyboard Style Series"  by Hector Martignon
+
+Joseph L. Hemen
+Contributed by giving the book
+32.97 "Nmap Network Scanning: The Official Nmap Project Guide to Network Discovery and Security Scanning"  by Gordon Fyodor Lyon
+
+
+Ralf Hildebrandt
+Contributed by giving the book
+18.82 "The Colossal Book of Mathematics: Classic Puzzles, Paradoxes, and Problems" by Martin Gardner
+
+Mariano Absatz
+Contributed by giving the book
+28.35 "How to Measure Anything: Finding the Value of "Intangibles" in Business"  by Douglas W. Hubbard
+
+Craig Maloney
+Contributed by giving the book
+9.32 "Eye Twisters: Ambigrams & Other\u200b Visual Puzzles to Amaze and Entertain"  by Burkard Polster
+
+Michael Betts
+Contributed by giving the book
+9.50 "Q.E.D.: Beauty in Mathematical Proof (Wooden Books)"  by Burkard Polster
+
+Steve Rippl
+Contributed by giving the book
+31.67 "The Mythical Man-Month"
+
+Hubert Garrido
+Contributed by giving the book
+19.79 "JavaScript: The Good Parts"
+
+Kelsey Cummings
+Contributed by giving the book
+64.12 "Computer Architecture: Concepts and Evolution 2-Volume Set"
+
+Gabriel Gonzalez
+Contributed by giving the book
+29.69 "Network Warrior"
+
+
+Dr Wolfram Haupt
+Contributed by giving the book
+8.00 "In the Beginning...was the Command Line"
+
+Peter Kooiman
+Contributed by giving the book
+19.79 "Illustrated Guide to Home Chemistry Experiments"
+
+William David Pooser
+Contributed by giving the books
+12.89 "How to Solve It: A New Aspect of Mathematical Method "
+23.39 "How to Prove It: A Structured Approach"
+
+Edward Blackburne
+Contributed by giving the book
+26.95 "Mathematics and Plausible Reasoning (vol 1)"
+
+
+
+Xavier Gattuso
+Contributed by giving the book
+21.86 "Wicked Cool Perl Scripts: Useful Perl Scripts That Solve Difficult Problems"
+
+
+Richard Madison
+Contributed by giving the books
+69.95 "Topologie générale: Chapitres 1-4  (French Edition)"
+69.95 "Topologie générale: Chapitres 5-10 (French Edition)"
+
+
+Bill Raines
+Contributed by giving the book
+31.49 "Designing Web Navigation: Optimizing the User Experience"
+
+
+Bataille Vincent
+Contributed by giving the books
+"Les techniques narratives du cinéma"
+"Entretien avec Fabienne Verdier"
+
+Sann GmbH
+Contributed by giving the book
+12.21 "Uncommon Therapy (Haley, Jay)"
+
+Frank Justin Woodman
+Contributed by giving the book
+75.60 "The Art of Electronics"
+
+Yohann Lucas 
+Sent a bug report about "+FLAGS" behavior.
+
+Reuben Thomas
+Corrected my bad english in the README imapsync(1).
+
+Michal Kubski
+Wrote TLS support patches/imapsync-1.217_tls_support.patch
+
+Jari Salmela
+Had success with Sun Java(tm) System Messaging Server 6.2-7.05
+Gave patches/imapsync_1.267_jari
+Not applied, this patch is too server specific but
+can be useful to specific users.
+
+Alexander Skwar
+From Google Apps domain to Googlemail account.
+Had a problem "NO Invalid folder: Sent (Failure)" with
+another folder. Solved by --folder (see FAQ)
+
+Cassio Brodbeck Caporal
+Had Microsoft Exchange 2000 6.0.6487.0 success.
+
+Tomasz Kaczmarski
+Found the nice trick 
+  --skipheader '^(?!Message-ID)'
+for buggy servers sending the whole header instead of
+just one line when --useheader 'Message-ID' is used.
+
+Benjamin Shapiro
+Contributed by giving $5,00 USD (finally 3,38 EUR )
+
+Gustavo Lozano
+Contributed by giving the book
+19.77 "Wicked Cool Shell Scripts"
+
+Stefan Schmidt
+Wrote "speed problem for large mails" FAQ entry.
+Fixed INBOX/INBOX bug.
+
+Janina Banach
+Contributed by giving the books
+19.77 "Hardware Hacking Projects for Geeks"
+23.09 "The Best of MAKE"
+
+Ricardo David Consolo
+Contributed by giving the book
+16.49 "More Joel on Software: Further Thoughts on Diverse and ..."
+
+Quirin Scheitle and Florian Kessler
+Contributed by giving the books
+32.97 "Designing interfaces: Patterns for Effective Interaction Design"
+26.39 "Learning Perl, 5th edition"
+
+
+Robert Sanders
+Contributed by giving the book
+40.00 "Processing : A Programming Handbook for Visual Designers and Artists"
+
+Patrick C.F. Ernzer
+Contributed by giving the book
+19.77 "Funkifying the Clave: Bass and Drums, Goines Ameen"
+
+Daniel Skinner
+Made me write the FAQ entry about offlineimap and
+read its documentation.
+
+Ploc
+Made me write the option --idatefromheader
+
+Pierre-Emmanuel André
+Success from dovecot 1.0.0 to Archiveopteryx 2.10
+Success from dovecot 1.0.0 to Archiveopteryx 3.0.0
+
+Kevin Harriss
+Pushed me to find (documentation and source) and solve 
+the authuser method with uw-imap. FAQ entry.
+
+Scott Pedigo
+Contributed by giving the book
+11.55 "Smart and Gets Things Done"
+
+
+Don Jackson
+Contributed by giving the book
+15.64 "The Back of the Napkin"
+
+Joschua Penix
+Contributed by giving the book
+26.39 "Programming Collective Intelligence"
+
+Bertram N Shure
+Contributed by giving the book
+15.61 "Hackers and Painters".
+
+Simon Heimlicher
+Gave a patch to avoid non-selectable folders.
+
+Stéphane Besnard
+Success from Serveur Domino IMAP4 Edition France  4.61 Code
+to Cyrus IMAP4 v2.3.7 server ready
+
+Drew McLellan
+Contributed by giving the book
+30.55 "Peopleware: Productive Projects and Teams"
+
+Nirdosh Shah
+Contributed by giving the books
+"The Best Software Writing I"
+"True Cuban Bass"
+"The Latin Bass Book"
+
+Philip Jocks
+Contributed by giving the book
+"User Interface Design for Programmers"
+
+Karl McCurdo
+Contributed by giving the book
+"Joel on software and on diverse..."
+
+David Breiland
+Contributed by giving the book
+"Mastering Perl"
+ 
+Marek Mahut (Fedora Project)
+- Cyrus IMAP4 v2.2.12-Invoca-RPM-2.2.12-8.1.RHEL4 to Zimbra Collaboration Suite 5.0.4.
+- Bug report about "parse_headers want an ARRAY ref"
+- Patch fixing "parse_headers want an ARRAY ref" (finally patch failed)
+- Packaged imapsync for Fedora imapsync-1.249-1.fc8
+- Gave the book "Intermediate Perl"
+- Thanked for imapsync
+No one did so much, and in one email!
+
+
+Blake Heinemann
+Contributed by giving the book
+"Perl Testing: A Developer's Notebook"
+
+Nathan Mills
+Contributed by giving the book
+"Mapping Hacks"
+
+Patrick Dayton (Medicus Insurance Compagny)
+Contributed by giving the book
+"Perl Hacks"
+
+
+Daniel Kohn
+Contributed by giving the book
+"Combinatorial Optimization: Algorithms and Complexity"
+
+
+Cvitkovich Andres
+Gave a patch to implement
+  * --pidfile option.
+  * --tmpfile  option.
+  * --skipheaderinfolder option.
+Had a successful 550000 users migration with imapsync !
+
+Scott Musser
+Contributed by giving the book
+"The mathematics of Juggling"
+
+George Henry Lenzer
+Contributed by giving the book
+"Higher-Order Perl"
+
+Bryce Schober
+Gave FAQ entry "imapsync ssl on win32".
+Gave FAQ entry "synchronisation to gmail"
+
+Arnt Gulbrandsen
+Found FAQ bug "Flags have to begin with a \ character."
+An imap server (archiveopteryx) coder that test imapsync,
+very rare.
+
+Wonko (http://wonko.com/)
+Wrote a good ruby script doing the same thing than imapsync.
+
+Scott Musser
+Suggested the --delete2folders option.
+
+Axel Rau 
+Success from courier-imap 3.0.3 to archiveopteryx 2.03
+
+Martin Wunderli
+Contributed by giving the book
+"Computers and Intractability". Garey.
+
+Huelbe Garcia
+Contributed by giving the book
+"The Shoelace Book" by Burkard Polster.
+
+Miron Cuperman
+Contributed by giving the book 
+"Beautiful Code: Leading Programmers Explain How They Think"
+
+Demian Rootring
+Failure story with dbmail 0.9 (as a "from" server)
+
+Patrick Ben Koetter
+Gave link to imapmigrate   : http://sourceforge.net/projects/cyrus-utils/
+Will wrote an article about imapsync, imapmigrate, offline-imap
+in German Linuxmagazin http://www.linuxmagazin.de/ January 2008
+
+Julien MARY
+From Dovecot 0.99.14 to Courier 3.0.8 (success)
+
+John Owens
+FAQ "Does imapsync retain the \Answered and $Forwarded flags?"
+From ??? imap server to gmail. Success or failure ?
+
+Lorenz Wallner
+Had success from "GMX IMAP4 StreamProxy" to Courier-IMAP.
+
+Stan Larson
+Contributed by giving the  book "Biting and Humorous Tales of a 
+Software Engineering Manager".
+
+Daniel I. Meiron
+Contributed by giving the  book "Asterisk: The future of Telephony"
+
+Todd Minnella
+Contributed by giving the  book "Agile and Iterative Development".
+
+Balázs Bárány
+Suggested to update documentation about --authuserX:
+avoid use of --authmechX with  --authuserX
+
+Peer Heinlein
+Suggested the --justlogin* options.
+
+Chris Weinhaupl
+Had problems from courier to zimbra
+(failure story ?)
+
+Peer Heinlein
+Had problem with *AsterixFolder
+
+Derek Diget
+Suggested --tmpdir
+
+Asbjørn Clemmensen
+Gave "Deerfield VisNetic MailServer 5.8.6" imap server.
+Found a bug about internal date in Deerfield.
+Made me fix date with Date::Manip
+Finally had success from Deerfield to Dovecot ?
+
+Marc Laporte
+Gave me 30$ and made me register a paypal account.
+
+Clark Allan
+Had \RECENT flag bug problem.
+Tried to migrate from mailenable to Zimbra.
+Futur will tell if imapsync can be a good boy for mailenable.
+
+Kevin Henrikson (Zimbra)
+Gave me many books.    
+
+Paolo Oopla
+FAQ about "99.8% cpu right after start" and --noauthmd5 solution.
+
+Marc Jauvin
+Found 1.217 slower than 1.182 (80s -> 250s, 2400 mail, 90MB)
+
+Neil Brown
+Made a rpm package of imapsync and gave the 
+imapsync.spec file.  
+
+Olaf Menkens
+Valentí Jové
+Had problem with flags and revision 1.201
+
+Heiko Kirsch
+Found the 24 characters bug in username.
+In fact this is 76 in Mail::IMAPClient, md5, MIME::Base64::encode.
+
+Morten W. Petersen
+Asked for the default behavior.
+All folders, recursively.
+
+Tobias Müller
+Found the buddy max inversion mistake in
+the documentation.
+
+Gavin Atkinson
+MailEnable under Windows to Dovecot under FreeBSD
+Not really a success. Just a one run copy.
+MailEnable does not give its headers.
+
+Simon Matter
+Had problem with append_string()
+from Cyrus-IMAPd to Lotus Notes 7.0.2
+
+Samuel Graenacher (Simon's friend)
+Wrote a patch to add flags and date to append_file()
+
+Foo Kok Wai
+MDaemon 9.5.4 success
+Mercury 4.1   success
+UW v12.264    success
+
+Enzo Michelangeli
+Made me try a second LOGIN login on first login failure.
+
+Carlos Roldan
+Made me change login() to login2()
+SmarterMail success
+
+Florin Andrei 
+Suggested to remove the bad behavior with INBOX
+and --prefix2 (prefix2 was ignored)
+Had a good discussion about memory in cyrus ml.
+
+Tashfeen Bhimdi
+IO::Socket::SSL have to be optional
+PLAIN without Capability AUTH=PLAIN is needed.
+
+Jalal
+Found --include and --include unuseful
+Wrote --include or  --include patch
+
+Daniel Ammann
+Made me finally write the --folderrec option.
+Gave OpenMail to Cyrus success
+
+Nicola De Marco
+Had authenticate problems with PLAIN
+and gave me a beautiful donation with the imapsync wishlist.
+
+Arunav Mandal
+Success ?
+from Domino IMAP4 Server Release 7.0.2
+to   Scalix IMAP server 10.0.1.3
+
+Eric Yellin
+Failure from Imail 7.04 (not sure)
+
+Barry W. Hickey
+Success from Microsoft Exchange 5.5 to Zimbra 4.0.4
+
+Damjan Perenic
+Success from cyrus to notes.
+Pb with big messages.
+
+Tom Allison
+Had problem with dovecot and dbmail
+Message-Id Message-ID. So imapsync is 
+now case insensitive with header keywords.
+
+David Abrahams
+Had problem with flags, suggested flag output.
+
+RISKO Gergely
+Maintain imapsync debian package.
+
+Marten Lehmann
+Made me talk about imapsync cpu and memory hungriness.
+Made me remove the exit(1) in case "No CAPABILITY for AUTHENTICATE"
+Found bug : imapsync does not delete messages immediately
+after a successful transfer but the next run.
+
+Paul Fisher
+Bug fix when "user<NUL>authuser<NUL>password" is over 76 characters
+encode_base64 and \n
+
+Christian Michallek
+Success with "David Tobit V8" to dbmail 2.0.9
+
+Robert Penz
+Had problem to migrate from Groupwise 7.0.
+Finally he migrated via outlook connector.
+(It is an imapsync failure).
+
+Doug Gorton
+Fixed bug about variable mess_size_total_skipped.
+
+Jonathan Doughty
+Found problem aboutthe md5 file on linux-france.org
+
+Chris Toledo
+Had problems from iPlanet 5.2 to Groupwise 7.0.
+Solved them with GW7 pack1. See the imapsync FAQ.
+
+Steven Ledwith
+Success from Rockliffe Mailsite 5.3.11 to dovecot-1.0-0.beta2.7 
+Made me write the --regexflag option.
+
+J.R. Taisto
+For syntax faults detection in the documentation.
+
+Stephen Weir
+Made a successful migration from
+"Scalix" to "Eudora WorldMail v2"
+Gave the good option for success (see FAQ)
+
+Kjetil Torgrim Homme
+Gave a jumbo patch adding
+--authuser
+--authmech
+--ssl
+and many improvments.
+
+
+Adam Kosmin
+Succeed to migrate from cyrus with an admin
+account and gave us the example. (see FAQ).
+--authuser1 option
+
+Kurt Hoffmann
+Had a pb with a big message on Zimbra-IMAP.
+Did he finally succed ? Yes
+"a stupid setting in Zimbra that restricts the size of 
+emails that can be uploaded via IMAP"
+
+Robert Terzi
+Seems to have the mbox vs Maildir/ problem
+and gave the --regexmess 's/\AFrom \w  .*\n//'
+solution.
+Had the "Word too large" bug with old UW and
+big folder. Made me add --split1 and --split2 options.
+
+
+Subbarao & Prasanthi Punnamaraju
+Asked how to move emails from InBox to a sub-folder.
+
+Sven Havemann
+Moved from Braunschweig to Graz and asked
+how to move Braunschweig mail sorted into 
+a folder INBOX.Braunschweig
+See FAQ.
+
+Vincent Deffontaines
+Made me talk about --exclude 'fold1|fold2|f3'
+Gave a patch for multiple  --exclude 
+
+Jim Rosenberg
+Had problems with dbmail 2.0.7.
+Gave up too early with bad feedback :-)
+
+Thomas Stegbauer 
+Suggested the mailing list creation.
+
+Stan Novogroudski
+Made me wrote the learn/subscribe script example.
+
+René Pfeiffer
+Paid me 100 euros for just an imapsync success story
+and little help from me. René also wrote a LinuxGazette
+article about imapsync in march 2006
+
+Mike
+Gave "Mdaemon 8.1" success story.
+(Pb with folders containing 2000 messages,
+had to split them to 800 messages)
+
+Nicolai Rasmussen
+Suggested the --minage option and asked
+a friend of him to code it.
+I made it compatible with --maxage too.
+
+Marcos Sungaila
+Reported the "do not consider namespace" bug 
+once again. And I fixed it. I think.
+
+Michael Menge
+Patch made --regextrans2 a multiple option
+
+Arnaud Launay
+Bug about --expunge12 (no option code)
+	 
+Kirk Averett
+Bug about --subscribed option. I stupidly
+commented a map line in release 1.138
+
+Evert Mouw
+Gave the "Term::ReadKey" module dependency problem.
+
+Roy Hoobler
+Problems with big folders.
+Bug about message sizes.
+
+Michael Muenz
+"no errors (about 80 users)
+from Exchange 5.5 to CyrusIMAPd 2.2.12"
+
+Javier Gomez
+Failure with MailEnable version 1.54
+
+Mark Waters
+Had a problem with --maxsize --skipsize (a bug)
+
+Costa Tsaousis
+Had a problem with a huge mailbox (20000 messages)
+
+Scott Glenn
+Found the bug about --regexmess applied only on the first
+message.
+
+Dag-Erling Smørgrav
+Gave a patch to add --buffersize option.
+Found a bug about acls sync.
+Gave a patch that broke my acls...
+
+Brian Cunnie
+Write good French and a patch
+to allow password input on command line 
+if none by options --password nor --passfile
+
+James Eborall
+Gave "Samsung Contact IMAP server 8.5.0"
+
+Lincoln Zuljewic Silva
+Gave "Domino IMAP4 Server Release 5.0.7"
+
+Dan Wang
+Gave "Novell NetMail and Novell Groupwise"
+Reported bug Novell NetMail flags undef
+
+
+Per olof Ljungmark
+Gave 
+"Netscape Messaging Server 4.15 Patch 7 (built Sep 12 2001))
+Cyrus IMAP4 v2.2.10"
+
+Harald A. Irmer
+Huge migration with mbox format pb.
+Several problems.
+Gave http://home.arcor.de/armin.diehl/imapcopy/imapcopy.html link.
+
+Aleksandar Milivojevic
+Had problems with the flags arrays
+
+Paul Dekkers
+Had a problem with perl on freebsd.
+Had memory problems solved by memory added.
+Suggested --regexmess too, too late :-)
+
+Jean-Michel besnard
+Pb with woody, Mail::ImapClient and fetch_hash
+
+Jamie Neil 
+Gave Groupwise Novell return and howto success.
+Suggested --regexmess option
+
+Norbert Schmidt
+Gave "from a Cyrus-IMAP Server to a Lotus Domino 6.5 IMAP Server".
+Had a problem with Domino \\ separator.
+
+Cliff Lipple
+Gave "from an NT Server running Qualcomm 
+Worldmail to a Mac OS X Server running Cyrus."
+
+Bryce Walter
+Gave "OpenWave to Imail 8.12"
+
+
+David Alix
+Suggested transfer the ACL.
+Suggested order message transfer by uid.
+Gave "Simeon Messaging Server from MessagingDirect" and
+     "Sendmail Advanced Messaging Server (from Sendmail.com)"
+Trying to migrate about 150 GBytes of mailstorage, 33000 mailboxes, 872 users.
+Will he succeed ?
+
+Timothy Falconer 
+Documentation about option --skipheader (one time only)
+Gave "Domino IMAP4 Server Release 5.0.6"
+     UW "IMAP4rev1 2003.338rh"
+
+Reed Sandberg
+Gave "MDaemon 7.0.1 ---> courier-imap-2.2.1"
+Gave the imapsync-undef_arrayref.diff patch.
+Added and wrote option --foldersizes
+Gave link http://sourceforge.net/projects/migrationtool/
+
+Christoph Nagelreiter
+Christoph ran imapsync to migrate from 
+Microsoft MCIS to Cyrus IMAP.
+16000 mailboxes, 15 GB.
+Will he succeed ? YES !
+
+Ivan Zilic Schmidt
+Made me start the FAQ.
+Suggested the --regextrans2 option.
+
+Leon Koch
+Gave Microsoft Exchange 2000 server and
+Domino IMAP4 Server Release 6.5.1
+Had pb with them :-) 
+So I added the BUGS section about "Multiple copies".
+
+Harald Behrens
+Gave MS Exchange Server 5.5 success.
+Had "Message has no header/body separator" error.
+
+Kris Boulez
+Ran imapsync from iPlanet Messaging server 5.1 to a Domino
+(Notes) 6.5 server.
+Suggested --skipheader --skipsize options.
+
+Christophe Labouisse
+Add a pb with dbmail headers (first blank added, sort "Received:")
+
+William Hernandez (fromESS/PR Webmasters)
+Wrote patch for --timeout
+Gave IMail 7.15 new problem/success story
+
+Wim Kerkhoff
+Gave infos about mailutil.
+ 
+Holger Mauermann
+Bug about missing "AUTH=CRAM-MD5" (also copy-paste mistake in login_imap)
+
+Kaspar Brand
+Wrote code implementing options
+ --include <regex>
+ --exclude <regex>
+ --maxsize <int>
+ --maxage  <int>
+and goodies (sort, no accent)
+ 
+Devin Reade
+Bug about destination separator character in source folder names.
+
+Rasjid Wilcox
+Bug about imap servers (DBmail and Bincimap) that don't support namespaces.
+
+Dave Rose
+Bug in help message about nested folders.
+ 
+Paul Boven
+Suggested --subscribe option, a better behavior and gave the patch.
+Suggested --prefix1 option.
+ 
+Tommi Lätti
+Suggested csv file loop (HUGE MIGRATION section) in pod doc.
+
+Vincent W.S. Tam 
+Suggested --subscribed option.
+
+Eric Yung 
+(Suggested --sep1 option) and tested it, and found a bug about it.
+
+Total amount of book prices :
+c \
+28.54+\
+30.86+\
+87.18+\
+19.90+\
+13.59+\
+32.65+\
+20.31+\
+\
+75.00+\
+\
+35.16+\
+13.86+\
+14.49+\
+46.42+\
+\
+27.32+\
+40.90+\
+\
+10.02+\
+\
+17.95+\
+9.84+\
+\
+24.95+\
+29.95+\
+\
+11.20+\
+24.95+\
+13.57+\
+\
+16.66+\
+16.47+\
+\
+36.97+\
+23.09+\
+47.16+\
+\
+19.77+\
+\
+35.95+\
+32.00+\
+34.61+\
+91.26+\
+38.20+\
+40.09+\
+\
+31.50+\
+25.60+\
+23.09+\
+29.70+\
+31.49+\
+\
+9.50+\
+\
+42.66+\
+13.46+\
+32.97+\
+18.82+\
+\
+31.67+\
+19.79+\
+\
+64.12+\
+\
+29.69+\
+\
+8+\
+\
+19.79+\
+\
+12.89+\
+23.39+\
+\
+26.95+\
+21.86+\
+\
+69.95+\
+69.95+\
+31.49+\
+12.21+\
+\
+75.60+\
+19.77+\
+\
+19.77+\
+23.09+\
+16.49+\
+32.97+\
+26.39+\
+\
+16.47+\
+26.39+\
+29.95+\
+33.95+\
+15.61+\
+11.55+\
+16.49+\
+16.49+\
+22.00+\
+26.39+\
+26.39+\
+19.77+\
+23.60+\
+19.77+\
+51.70+\
+19.79+\
+58.38+\
+13.57+\
+32.70+\
+29.00+\
+19.00+\
+26.37+\
+38.60+\
+16.49+\
+39.10+\
+28.00+\
+40.00+\
+18.21+\
+24.95+\
+64.50+\
+32.70+\
+50.40+\
+22.49+\
+18.21+\
+29.70+\
+15.96+\
+13.57+\
+15.61+\
+11.86+\
+14.95+\
+12.21+\
+27.50+\
+59.99+\
+31.20+\
+40.00
+=
+3196.99
