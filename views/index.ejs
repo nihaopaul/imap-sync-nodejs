@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IMAP Sync</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+
+    <div class="container">
+      <div class="header">
+
+        <h3 class="text-muted">IMAP-COPY</h3>
+      </div>
+
+      <div class="jumbotron">
+        <form class="form-horizontal" id="details" role="form" method="POST" action="/move">
+          <div class="row">
+            <div class="col-md-6">
+              <h3>From</h3>
+              <div class="form-group">
+                <label for="fromEmail" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="fromEmail" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="fromPassword" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="fromPassword" placeholder="Password">
+                </div>
+              </div>
+ 
+              
+            </div> <!-- leftside -->
+            <div class="col-md-6">
+              <h3>To</h3>
+              <div class="form-group">
+                <label for="toEmail" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="toEmail" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="toPassword" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="toPassword" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="ssl"> SSL?
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button id="submit" type="submit" class="btn btn-lg btn-primary pull-right" disabled>Go</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </form>
+
+      </div>
+
+
+      <div class="footer">
+        <p>&copy; Chaos Studio 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+    $(function(){
+      var Email = function() {
+        this.from = {
+          email: false, 
+          password: false 
+        };
+        this.to = {
+          email: false,
+          password: false,
+          ssl: false
+        };
+      }
+      Email.prototype = {
+        updateValues: function() {
+          this.from.email = $('#fromEmail').val();
+          this.from.password = $('#fromPassword').val();
+          this.to.email = $('#toEmail').val();
+          this.to.password = $('#toPassword').val();
+          this.to.ssl = $("#ssl").is(':checked');
+
+          if (this.from.email && this.from.password && this.to.email && this.to.password) {
+            $('button#submit').removeClass('.btn-default').addClass('.btn-primary').attr("disabled", false);
+          } else {
+            $('button#submit').removeClass('.btn-primary').addClass('.btn-default').attr("disabled", true);
+          }
+        }
+      }
+
+
+      var Page = new Email();
+      $('#submit').on('click', function(){
+
+        $.post('/move', { to: Page.to, from: Page.from })
+        .done(function(data) {
+          $('.jumbotron').replaceWith(data);
+        });
+         
+        return false;
+      });
+      $('input').change(function() { 
+        Page.updateValues();
+      });
+
+    });
+    </script>
+  </body>
+</html>
