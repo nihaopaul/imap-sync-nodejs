@@ -18,15 +18,28 @@ var Process = function(params){
   this.hash = this._hash();
   this.out = fs.openSync('./logs/'+this.hash+'.log', 'a');
   this.err = fs.openSync('./logs/'+this.hash+'.log', 'a');
-  this.child = spawn('./imapsync/imapsync', [
-      '--host1', 'mrchaos.chaos-studio.com' ,
-      '--user1', params.from.email, 
-      '--password1', params.from.password,
-      '--host2', 'imap.chaos-studio.com' ,
-      '--user2', params.to.email, 
-      '--password2', params.to.password,
-      '--debug', '--ssl2', '--sep2', '/', "--prefix2", ""
-      ], {
+
+  this.options = [
+    '--host1', 'mrchaos.chaos-studio.com' ,
+    '--user1', this.params.from.email, 
+    '--password1', this.params.from.password,
+    '--host2', this.params.to.server,
+    '--user2', this.params.to.email, 
+    '--password2', this.params.to.password
+    
+  ];
+
+  if (this.params.to.usessl == 'true') {
+    this.options.push('--ssl2');
+  }
+
+  this.options.push('--debug');
+  this.options.push('--sep2');
+  this.options.push('/');
+  this.options.push("--prefix2");
+  this.options.push("");
+
+  this.child = spawn('./imapsync/imapsync', this.options, {
 
     detached: false,
     stdio: [ 'ignore', this.out, this.err ]
