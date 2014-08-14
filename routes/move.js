@@ -20,7 +20,7 @@ var Process = function(params){
   this.err = fs.openSync('./logs/'+this.hash+'.log', 'a');
 
   this.options = [
-    '--host1', 'mrchaos.chaos-studio.com' ,
+    '--host1', '127.0.0.1' ,
     '--user1', this.params.from.email, 
     '--password1', this.params.from.password,
     '--host2', this.params.to.server,
