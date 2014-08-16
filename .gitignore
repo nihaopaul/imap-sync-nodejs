@@ -1,3 +1,4 @@
 node_modules
 logs/*.logs
 LOG_imapsync
+public/bower_components
