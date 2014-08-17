@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var move = require('./routes/move');
+var status = require('./routes/status');
+
 
 var app = express();
 
@@ -23,8 +25,10 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', routes);
 app.use('/move', move);
+app.use('/status', status);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -33,7 +37,6 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-/// error handlers
 
 // development error handler
 // will print stacktrace
