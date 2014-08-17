@@ -47,7 +47,7 @@
                 <div class="col-sm-offset-2 col-sm-10">
                   <div class="checkbox">
                     <label>
-                      <input type="checkbox" id="ssl" checked="checked"> SSL?
+                      <input type="checkbox" id="fromssl" checked="checked"> SSL?
                     </label>
                   </div>
                 </div>
@@ -79,7 +79,7 @@
                 <div class="col-sm-offset-2 col-sm-10">
                   <div class="checkbox">
                     <label>
-                      <input type="checkbox" id="ssl" checked="checked"> SSL?
+                      <input type="checkbox" id="tossl" checked="checked"> SSL?
                     </label>
                   </div>
                 </div>
@@ -126,9 +126,10 @@
         updateValues: function() {
           this.from.email = $('#fromEmail').val();
           this.from.password = $('#fromPassword').val();
+          this.from.usessl = $("#fromssl").is(':checked');
           this.to.email = $('#toEmail').val();
           this.to.password = $('#toPassword').val();
-          this.to.usessl = $("#ssl").is(':checked');
+          this.to.usessl = $("#tossl").is(':checked');
           this.to.server = $('#toServer').val();
 
 
@@ -153,7 +154,8 @@
 
         $.post('/move', { to: Page.to, from: Page.from })
         .done(function(data) {
-          $('.jumbotron').replaceWith(data);
+          window.location.href=data.url;
+          // $('.jumbotron').replaceWith(data);
         });
          
         return false;
