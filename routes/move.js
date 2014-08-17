@@ -114,10 +114,10 @@ Process.prototype = {
   _execute: function() {
     this.out = fs.openSync(this.fileLog, 'a');
     this.err = fs.openSync(this.fileLog, 'a');
-    // this.child = spawn('./imapsync/imapsync', this.options, {
-    //   detached: false,
-    //   stdio: [ 'ignore', this.out, this.err ]
-    // }); 
+    this.child = spawn('./imapsync/imapsync', this.options, {
+      detached: false,
+      stdio: [ 'ignore', this.out, this.err ]
+    }); 
   }
 }
 
