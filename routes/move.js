@@ -126,13 +126,13 @@ Process.prototype = {
 router.post('/', function(req, res) {
   var P1 = new Process(req.body);
   P1.isActive(function(status) {
-    console.log(P1.id);
+
     if (status == true) {
       res.send({url:"/status/"+P1.id});
-      // res.render('active');
+
     } else {
       res.send({url:"/status/"+P1.id});
-      // res.render('move', P1);
+
     }
   });
 
